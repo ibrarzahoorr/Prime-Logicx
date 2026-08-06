@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Prime Logicx",
   shortName: "Prime Logicx",
-  domain: "https://YOUR-DOMAIN-HERE.com",
+  domain: "https://prime-logicx.vercel.app",
   description:
     "Prime Logicx builds custom web & mobile apps, AI automation solutions, and digital marketing systems for businesses worldwide.",
   whatsapp: "923010482120",
