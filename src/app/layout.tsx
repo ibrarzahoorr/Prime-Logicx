@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   verification: {
-    google: "heKNgGA8f-PT2aKyy2_wt0HhqAZ2HLQKco2XTEQFkjo",
+    google: "8NgnyqWurYq3EpiFdQmdwtgiOzqYcusjhSNAfpTz00Q",
   },
 };
 
