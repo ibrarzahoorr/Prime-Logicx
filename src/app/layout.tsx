@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — Web & App Development, AI Automation & Digital Marketing`,
     description: siteConfig.description,
   },
+  verification: {
+    google: "heKNgGA8f-PT2aKyy2_wt0HhqAZ2HLQKco2XTEQFkjo",
+  },
 };
 
 export default function RootLayout({
@@ -64,11 +67,38 @@ export default function RootLayout({
     <html lang="en" className={`${sora.variable} ${inter.variable} h-full antialiased`}>
       <head>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PR5ZTLJJ');`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema]) }}
         />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xy7c8e1mye");`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PR5ZTLJJ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <ScrollProgress />
         <CursorSpotlight />
         <Header />
