@@ -8,7 +8,14 @@ import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import PageTransition from "@/components/shared/PageTransition";
 import ScrollProgress from "@/components/shared/ScrollProgress";
 import CursorSpotlight from "@/components/shared/CursorSpotlight";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import {
+  organizationSchema,
+  websiteSchema,
+  professionalServiceSchema,
+  speakableSchema,
+  personSchema,
+  itemListSchema,
+} from "@/lib/schema";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -48,7 +55,17 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name }],
   category: "technology",
   robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large", "max-video-preview": -1 } as never,
-  alternates: { canonical: "/" },
+  alternates: { 
+    canonical: "/",
+    languages: {
+      "en-US": "/",
+      "en-GB": "/",
+      "en-CA": "/",
+      "en-AU": "/",
+      "en-AE": "/",
+      "x-default": "/"
+    }
+  },
   openGraph: {
     type: "website",
     url: siteConfig.domain,
@@ -86,7 +103,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema]) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              organizationSchema,
+              websiteSchema,
+              professionalServiceSchema,
+              speakableSchema,
+              personSchema,
+              itemListSchema,
+            ]),
+          }}
         />
         <script
           type="text/javascript"

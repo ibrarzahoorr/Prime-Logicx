@@ -62,3 +62,68 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
     })),
   };
 }
+
+export const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.name,
+  url: siteConfig.domain,
+  logo: `${siteConfig.domain}/icon.svg`,
+  image: `${siteConfig.domain}/icon.svg`,
+  description: siteConfig.description,
+  telephone: `+${siteConfig.whatsapp}`,
+  email: siteConfig.email,
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PK", 
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "31.5204",
+    longitude: "74.3587"
+  },
+  areaServed: ["US", "UK", "CA", "AU", "AE", "PK", "Worldwide"],
+  sameAs: [
+    siteConfig.socials.linkedin,
+    siteConfig.socials.twitter,
+    siteConfig.socials.instagram
+  ].filter(Boolean)
+};
+
+export const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: siteConfig.name,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", ".faq-answer", ".hero-description"]
+  },
+  url: siteConfig.domain
+};
+
+export const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ibrar Zahoor",
+  jobTitle: "Founder & CEO",
+  worksFor: {
+    "@type": "Organization",
+    name: siteConfig.name
+  },
+  url: siteConfig.domain,
+  sameAs: [
+    "https://www.linkedin.com/in/ibrar-zahoor/"
+  ]
+};
+
+export const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Custom Software Development", url: `${siteConfig.domain}/services/custom-software` },
+    { "@type": "ListItem", position: 2, name: "Web App Development", url: `${siteConfig.domain}/services/web-development` },
+    { "@type": "ListItem", position: 3, name: "AI Automation Solutions", url: `${siteConfig.domain}/services/ai-automation` },
+    { "@type": "ListItem", position: 4, name: "Digital Marketing & SEO", url: `${siteConfig.domain}/services/digital-marketing` }
+  ]
+};
