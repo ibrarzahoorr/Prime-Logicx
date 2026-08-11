@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const blog = getBlogBySlug(params.slug);
+  const resolvedParams = await params;
+  const blog = getBlogBySlug(resolvedParams.slug);
   if (!blog) return {};
 
   const url = `${siteConfig.domain}/blog/${blog.slug}`;
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPost({ params }: Props) {
-  const blog = getBlogBySlug(params.slug);
+export default async function BlogPost({ params }: Props) {
+  const resolvedParams = await params;
+  const blog = getBlogBySlug(resolvedParams.slug);
 
   if (!blog) {
     notFound();
@@ -59,16 +61,16 @@ export default function BlogPost({ params }: Props) {
       <div className="bg-background pt-32 pb-24 sm:pt-40 sm:pb-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <header className="mb-10 text-center">
-            <time dateTime={blog.date} className="text-sm leading-6 text-white/50 block mb-2">
+            <time dateTime={blog.date} className="text-sm leading-6 text-[var(--muted)] block mb-2">
               {new Date(blog.date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
-            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl font-sora">
+            <h1 className="text-3xl font-bold tracking-tight text-[var(--text)] sm:text-5xl font-sora">
               {blog.title}
             </h1>
-            <p className="mt-4 text-sm text-accent">By {blog.author}</p>
+            <p className="mt-4 text-sm text-[var(--brand)] font-medium">By {blog.author}</p>
           </header>
           
-          <div className="prose prose-invert prose-lg max-w-none prose-headings:font-sora prose-a:text-accent hover:prose-a:text-accent-hover mt-12">
+          <div className="prose prose-lg max-w-none prose-headings:font-sora prose-headings:text-[var(--text)] prose-p:text-[var(--text-2)] prose-a:text-[var(--brand)] hover:prose-a:text-[var(--brand-2)] prose-strong:text-[var(--text)] prose-ul:text-[var(--text-2)] prose-li:text-[var(--text-2)] mt-12">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
         </div>
