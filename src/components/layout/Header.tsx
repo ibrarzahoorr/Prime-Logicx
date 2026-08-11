@@ -125,6 +125,9 @@ export default function Header() {
             <Link href="/work" className="px-4 py-2.5 rounded-lg font-medium text-[15px] text-[var(--text-2)] hover:text-[var(--text)] hover:bg-[var(--surface-2)] transition-colors">
               Work
             </Link>
+            <Link href="/blog" className="px-4 py-2.5 rounded-lg font-medium text-[15px] text-[var(--text-2)] hover:text-[var(--text)] hover:bg-[var(--surface-2)] transition-colors">
+              Blog
+            </Link>
             <Link href="/contact" className="px-4 py-2.5 rounded-lg font-medium text-[15px] text-[var(--text-2)] hover:text-[var(--text)] hover:bg-[var(--surface-2)] transition-colors">
               Contact
             </Link>
@@ -229,6 +232,7 @@ export default function Header() {
                   {[
                     { label: "About", href: "/about" },
                     { label: "Work", href: "/work" },
+                    { label: "Blog", href: "/blog" },
                     { label: "Contact", href: "/contact" },
                   ].map((item, i) => (
                     <motion.div

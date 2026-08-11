@@ -65,6 +65,7 @@ export default function Footer() {
             <Link href="/about" className="hover:text-[var(--text)] transition-colors">About</Link>
             <Link href="/work" className="hover:text-[var(--text)] transition-colors">Work</Link>
             <Link href="/services" className="hover:text-[var(--text)] transition-colors">All Services</Link>
+            <Link href="/blog" className="hover:text-[var(--text)] transition-colors">Blog</Link>
             <Link href="/contact" className="hover:text-[var(--text)] transition-colors">Contact</Link>
           </div>
           <div className="text-[13px] text-[var(--muted)]">&copy; {year} Prime Logicx. All rights reserved.</div>

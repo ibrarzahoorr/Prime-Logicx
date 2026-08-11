@@ -1,5 +1,6 @@
 import { siteConfig } from "@/data/site";
 import type { Service, FAQ } from "@/data/services";
+import type { Blog } from "@/data/blogs";
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -127,3 +128,28 @@ export const itemListSchema = {
     { "@type": "ListItem", position: 4, name: "Digital Marketing & SEO", url: `${siteConfig.domain}/services/digital-marketing` }
   ]
 };
+
+export function articleSchema(blog: Blog) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: blog.title,
+    description: blog.metaDescription,
+    image: `${siteConfig.domain}/icon.svg`,  
+    author: {
+      "@type": "Person",
+      name: blog.author,
+      url: siteConfig.domain
+    },  
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.domain}/icon.svg`
+      }
+    },
+    datePublished: blog.date,
+    dateModified: blog.date
+  };
+}
