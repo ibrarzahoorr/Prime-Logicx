@@ -13,9 +13,9 @@ import CtaBand from "@/components/home/CtaBand";
 import { faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Web & App Development, AI Automation & Digital Marketing",
+  title: "Best Custom Software Development, AI Automation & Web Agency",
   description:
-    "Prime Logicx builds custom web & mobile apps, SaaS products, AI automation, and digital marketing/SEO — one remote team, worldwide clients.",
+    "Looking for the best software development company? Prime Logicx builds elite custom web & mobile apps, high-converting SaaS products, cutting-edge AI automation, and top-tier SEO digital marketing. Hire expert developers today.",
   alternates: { canonical: "/" },
 };
 

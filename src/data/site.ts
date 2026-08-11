@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Prime Logicx",
   domain: "https://prime-logicx.vercel.app",
   description:
-    "Prime Logicx builds custom web & mobile apps, AI automation solutions, and digital marketing systems for businesses worldwide.",
+    "Prime Logicx is the leading custom software development company, offering elite web & mobile app development, top-tier AI automation solutions, and expert digital marketing systems for businesses worldwide. Hire the best developers today.",
   whatsapp: "923010482120",
   whatsappDisplay: "+92 301 0482120",
   email: "primelogicx@gmail.com",
